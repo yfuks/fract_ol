@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/09 13:06:12 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/01 15:01:43 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/01 17:26:24 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include <stdlib.h>
 # include "libft.h"
 
-# define W_HEIGTH 500
-# define W_WIDTH 500
+# define W_HEIGTH 600
+# define W_WIDTH 600
 # define W_TITLE "Fract_ol 42"
 
 # define KEY_ESC	53

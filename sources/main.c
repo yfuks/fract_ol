@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/24 17:57:00 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/01 15:01:58 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/01 17:05:30 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static	void	init_env(t_env *e, char *argv)
 	e->ca = 0;
 	e->cb = 0;
 	e->zoom = 1;
-	e->n = 50;
+	e->n = 100;
 	e->x = 0;
 	e->y = 0;
 	e->clock_prg = clock();

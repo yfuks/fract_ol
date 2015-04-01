@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/09 13:17:58 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/01 15:03:35 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/01 17:31:20 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,20 @@ int			expose_hook(t_env *e)
 
 int			key_hook(int keycode, t_env *e)
 {
-	(void)e;
 	if (keycode == KEY_ESC)
 		exit(0);
+	else if (keycode == KEY_UP)
+		e->y -= 50;
+	else if (keycode == KEY_DOWN)
+		e->y += 50;
+	if (keycode == KEY_UP || keycode == KEY_DOWN)
+		draw(e);
 	return (0);
 }
 
 int			mouse_mouv(int x, int y, t_env *e)
 {
-	if ((50 * (clock() - e->clock_prg)) / CLOCKS_PER_SEC > 1)
+	if ((30 * (clock() - e->clock_prg)) / CLOCKS_PER_SEC > 1)
 	{
 		e->clock_prg = clock();
 		x -= W_WIDTH / 2;
