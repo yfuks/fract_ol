@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/24 20:48:23 by yfuks             #+#    #+#             */
-/*   Updated: 2014/12/30 16:27:59 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/01 16:23:34 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 static void	put_pixel(t_env *e, int x, int y, int coloration)
 {
-	int				r;
-	int				g;
-	int				b;
+	int		r;
+	int		g;
+	int		b;
 
-	b = 0xFF -(coloration % 255);
-	coloration /= 255;
-	g = 0xFF - (coloration % 255);
-	coloration /= 255;
-	r = 0xFF - (coloration % 255);
-	x *= 2;
-	if (x >= 0 && y >= 0 && x < W_HEIGTH * 2 && y < W_WIDTH)
+	r = (coloration & 0xFF0000) >> 16;
+	g = (coloration & 0xFF00) >> 8;
+	b = (coloration & 0xFF);
+	if (y >= 0 && x >= 0 && y < W_HEIGTH && x < W_WIDTH)
 	{
-		e->data[(y * e->sizeline) + (2 * x)] = r;
-		e->data[(y * e->sizeline) + (2 * x) + 1] = g;
-		e->data[(y * e->sizeline) + (2 * x) + 2] = b;
+		e->data[(y * e->sizeline) + ((e->bpp / 8) * x) + 2] = r;
+		e->data[(y * e->sizeline) + ((e->bpp / 8) * x) + 1] = g;
+		e->data[(y * e->sizeline) + ((e->bpp / 8) * x)] = b;
 	}
 }
 
@@ -38,7 +35,7 @@ void		draw_julia(t_env *e)
 	int	x, y, i;
 	
 	x = 0;
-	while (x < W_WIDTH * 2)
+	while (x < W_WIDTH)
 	{
 		y = 0;
 		while (y < W_HEIGTH)
@@ -53,10 +50,8 @@ void		draw_julia(t_env *e)
 				Zb = 2 * temp * Zb + e->cb;
 				i++;
 			}
-			if (i < 9)
-				put_pixel(e, x, y, 0xFFFFFF);
-			else if (i != e->n)
-				put_pixel(e, x, y, ((255-i * 10) << 16) + ((255-i * 10) << 8) + ((255-i * 10)));
+			if (i != e->n)
+				put_pixel(e, x, y, ((255 - i * 6) << 16) + ((255 - i * 2) << 8) + (255 - i * 10));
 			y++;
 		}
 		x++;

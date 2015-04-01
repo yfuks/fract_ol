@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/09 13:06:12 by yfuks             #+#    #+#             */
-/*   Updated: 2014/12/16 17:07:15 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/01 15:01:43 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 #ifndef FT_FRACT_OL_H
 # define FT_FRACT_OL_H
 # include <mlx.h>
+# include <time.h>
 # include <errno.h>
 # include <stdio.h>
 # include <math.h>
 # include <complex.h>
 # include <stdlib.h>
 # include "libft.h"
-# define W_WIDTH 500
+
 # define W_HEIGTH 500
+# define W_WIDTH 500
+# define W_TITLE "Fract_ol 42"
+
+# define KEY_ESC	53
+# define KEY_UP		126
+# define KEY_DOWN	125
 
 typedef struct		s_env
 {
@@ -41,6 +48,7 @@ typedef struct		s_env
 	double			cb;
 	double			zoom;
 	int				n;
+	clock_t			clock_prg;
 }					t_env;
 int					expose_hook(t_env *e);
 int					key_hook(int keycode, t_env *e);
