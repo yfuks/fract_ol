@@ -6,7 +6,7 @@
 #    By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/10 20:41:40 by yfuks             #+#    #+#              #
-#    Updated: 2014/12/09 11:19:42 by yfuks            ###   ########.fr        #
+#    Updated: 2015/03/10 03:30:08 by yfuks            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -70,10 +70,16 @@ SRC =	atoi.c		\
 		strtrim.c	\
 		tolower.c	\
 		toupper.c	\
-		lstaddend.c	\
-		lstsize.c
+		strappend.c	\
+		strchngchr.c\
+		get_next_line.c\
+		atol.c		\
+		swap.c		\
+		putfloat.c	\
+		putlong.c	\
+		fabs.c		
 
-HEAD = ./
+HEAD = ./includes
 
 OBJ = 	atoi.o      \
         bzero.o     \
@@ -133,18 +139,30 @@ OBJ = 	atoi.o      \
         strtrim.o   \
         tolower.o   \
         toupper.o	\
-		lstaddend.o	\
-		lstsize.o
+		strappend.o	\
+		strchngchr.o\
+		get_next_line.o\
+		atol.o		\
+		swap.o		\
+		putfloat.o	\
+		putlong.o	\
+		fabs.o
 
 all : $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRC) -I $(HEAD) && ar rc $(NAME) $(OBJ)
+	@echo "Compiling .."
+	@gcc -Wall -Wextra -Werror -c $(SRC) -I $(HEAD) && ar rc $(NAME) $(OBJ)
+	@echo "Done !"
 
 clean:
-	/bin/rm -f $(OBJ)
+	@echo "Remove .o  ..."
+	@/bin/rm -f $(OBJ)
+	@echo "Done !"
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@echo "Remove lib ..."
+	@/bin/rm -f $(NAME)
+	@echo "Done !" 
 
 re: fclean all

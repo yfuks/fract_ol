@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   atol.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 13:21:31 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/10 04:00:05 by yfuks            ###   ########.fr       */
+/*   Created: 2015/03/03 18:22:01 by yfuks             #+#    #+#             */
+/*   Updated: 2015/03/10 04:01:52 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static int	whatsign(const char *str)
 	return (sign);
 }
 
-int			ft_atoi(const char *str)
+long		ft_atol(const char *str)
 {
-	int		n;
+	long	n;
 	int		i;
 	int		sign;
 	char	*s;

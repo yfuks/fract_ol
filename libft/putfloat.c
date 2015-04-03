@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putnbr.c                                           :+:      :+:    :+:   */
+/*   putfloat.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 14:56:58 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/10 03:38:24 by yfuks            ###   ########.fr       */
+/*   Created: 2015/03/10 03:15:44 by yfuks             #+#    #+#             */
+/*   Updated: 2015/03/10 03:23:05 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void			ft_putfloat(float nbr, unsigned int p)
 {
-	char	*str;
+	long	l;
+	float	r;
 
-	str = ft_itoa(n);
-	ft_putstr(str);
-	free(str);
+	l = (long)nbr;
+	r = 0.5;
+	if ((ft_fabs(nbr - l) >= r) && (p == 0))
+		l = ((l > 0) ? l + 1 : l - 1);
+	ft_putlong(l);
+	nbr = ft_fabs(nbr - l);
+	if (nbr > 0 && p != 0)
+	{
+		write(1, ".", 1);
+		while (p--)
+		{
+			nbr = nbr * 10;
+			l = (long)nbr;
+			l = l % 10;
+			nbr = nbr - l;
+			ft_putchar(l + 48);
+		}
+	}
 }

@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putnbr.c                                           :+:      :+:    :+:   */
+/*   putlong.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 14:56:58 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/10 03:38:24 by yfuks            ###   ########.fr       */
+/*   Created: 2015/03/10 03:21:29 by yfuks             #+#    #+#             */
+/*   Updated: 2015/03/10 03:21:46 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void		ft_putlong(long l)
 {
-	char	*str;
-
-	str = ft_itoa(n);
-	ft_putstr(str);
-	free(str);
+	if (l < 0)
+	{
+		write(1, "-", 1);
+		l = -l;
+	}
+	if (l > 9)
+	{
+		ft_putlong(l / 10);
+		ft_putlong(l % 10);
+	}
+	else
+	{
+		l = l + 48;
+		write(1, &l, 1);
+	}
 }
