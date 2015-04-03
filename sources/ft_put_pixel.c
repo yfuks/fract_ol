@@ -6,13 +6,13 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/24 20:48:23 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/01 17:18:48 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/03 23:46:43 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fract_ol.h"
 
-static void	put_pixel(t_env *e, int x, int y, int coloration)
+void	put_pixel(t_env *e, int x, int y, int coloration)
 {
 	int		r;
 	int		g;
@@ -29,31 +29,22 @@ static void	put_pixel(t_env *e, int x, int y, int coloration)
 	}
 }
 
-void		draw_julia(t_env *e)
+int			julia(t_env *e, int x, int y)
 {
-	double Za, temp, Zb;
-	int	x, y, i;
+	double	Za;
+	double	Zb;
+	double	temp;
+	int		i;
 	
-	x = 0;
-	while (x < W_WIDTH)
+	Za = ((4 * (float)x / W_WIDTH - 2) / e->zoom) + ((e->x / W_WIDTH));
+	Zb = ((-4 * (float)y / W_HEIGTH + 2) / e->zoom) + ((e->y / W_HEIGTH));
+	i = 0;
+	while (Za * Za + Zb * Zb <= 4 && i < e->n)
 	{
-		y = 0;
-		while (y < W_HEIGTH)
-		{
-			Za = ((4 * (float)x / W_WIDTH - 2) / e->zoom) + ((e->x / W_WIDTH));
-			Zb = ((-4 * (float)y / W_HEIGTH + 2) / e->zoom) + ((e->y / W_HEIGTH));
-			i = 0;
-			while (Za * Za + Zb * Zb <= 4 && i < e->n)
-			{
-				temp = Za;
-				Za = Za * Za - Zb * Zb + e->ca;
-				Zb = 2 * temp * Zb + e->cb;
-				i++;
-			}
-			if (i != e->n)
-				put_pixel(e, x, y, ((255 - i * 6) << 16) + ((255 - i * 2) << 8) + (255 - i * 10));
-			y++;
-		}
-		x++;
+		temp = Za;
+		Za = Za * Za - Zb * Zb + e->ca;
+		Zb = 2 * temp * Zb + e->cb;
+		i++;
 	}
+	return (i);
 }

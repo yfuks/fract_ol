@@ -6,7 +6,7 @@
 #    By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/01 14:18:08 by yfuks             #+#    #+#              #
-#    Updated: 2015/04/03 23:12:16 by yfuks            ###   ########.fr        #
+#    Updated: 2015/04/03 23:39:41 by yfuks            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -16,7 +16,8 @@ SRC = sources/draw.c			\
 		sources/ft_put_pixel.c	\
 		sources/main.c			\
 		libft/libft.a			\
-		sources/hook.c
+		sources/hook.c			\
+		sources/draw_fractal.c
 
 HEAD = ./includes
 

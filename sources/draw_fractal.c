@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.c                                             :+:      :+:    :+:   */
+/*   draw_fractal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/03 23:11:56 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/03 23:46:07 by yfuks            ###   ########.fr       */
+/*   Created: 2015/04/03 23:28:22 by yfuks             #+#    #+#             */
+/*   Updated: 2015/04/03 23:46:58 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fract_ol.h"
 
-static void	fill_img(t_env *e)
+void	draw_fractal(t_env *e, int (*f)(t_env *, int, int))
 {
-	if (!(e->data = mlx_get_data_addr
-		(e->img, &e->bpp, &e->sizeline, &e->endian)))
-		ft_putendl_fd(strerror(errno), 2);
-	else
-		draw_fractal(e, julia);
-}
+	int		x;
+	int		y;
+	int		i;
+	int		color;
 
-void	draw(t_env *e)
-{
-	if ((e->img = mlx_new_image(e->mlx, W_WIDTH, W_HEIGTH)))
+	y = 0;
+	while (y < W_HEIGTH)
 	{
-		fill_img(e);
-		mlx_put_image_to_window(e->mlx, e->win, e->img, 0, 0);
-		mlx_destroy_image(e->mlx, e->img);
+		x = 0;
+		while (x < W_WIDTH)
+		{
+			i = (*f)(e, x, y);
+			color = ((255 - i * e->r) << 16) + ((255 - i * e->g) << 8)
+				+ (255 - i * e->b);
+			if (i != e->n)
+				put_pixel(e, x, y, color); 
+			x++;
+		}
+		y++;
 	}
 }
