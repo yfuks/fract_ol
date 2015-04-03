@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/09 13:06:12 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/03 23:22:02 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/03 23:45:09 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@
 # include <mlx.h>
 # include <time.h>
 # include <errno.h>
-# include <stdio.h>
-# include <math.h>
-# include <complex.h>
-# include <stdlib.h>
 # include "libft.h"
 
 # define W_HEIGTH	500
@@ -33,6 +29,9 @@
 # define KEY_RIGHT	124
 # define KEY_DOWN	125
 # define KEY_UP		126
+
+# define SCROLL_UP		4
+# define SCROLL_DOWN	5
 
 # define FPS		30
 
@@ -54,6 +53,9 @@ typedef struct		s_env
 	double			cb;
 	double			zoom;
 	int				n;
+	int				r;
+	int				g;
+	int				b;
 	clock_t			clock_prg;
 }					t_env;
 int					expose_hook(t_env *e);
@@ -62,6 +64,8 @@ int					mouse_hook(int button, int x, int y, t_env *e);
 int					mouse_mouv(int x, int y, t_env *e);
 void				reset_param(t_env *e);
 void				ft_put_error(char *argv, char *str1);
-void				draw_julia(t_env *e);
+void				put_pixel(t_env *e, int x, int y, int coloration);
+int					julia(t_env *e, int x, int y);
+void				draw_fractal(t_env *e, int(*f)(t_env *, int, int));
 void				draw(t_env *e);
 #endif
