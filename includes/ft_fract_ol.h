@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/09 13:06:12 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/01 17:26:24 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/03 23:22:02 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,19 @@
 # include <stdlib.h>
 # include "libft.h"
 
-# define W_HEIGTH 600
-# define W_WIDTH 600
-# define W_TITLE "Fract_ol 42"
+# define W_HEIGTH	500
+# define W_WIDTH	500
+# define W_TITLE	"Fract_ol 42"
 
 # define KEY_ESC	53
-# define KEY_UP		126
+# define KEY_PLUS	69
+# define KEY_MINUS	78
+# define KEY_LEFT	123
+# define KEY_RIGHT	124
 # define KEY_DOWN	125
+# define KEY_UP		126
+
+# define FPS		30
 
 typedef struct		s_env
 {
@@ -54,8 +60,8 @@ int					expose_hook(t_env *e);
 int					key_hook(int keycode, t_env *e);
 int					mouse_hook(int button, int x, int y, t_env *e);
 int					mouse_mouv(int x, int y, t_env *e);
-void				map_pixels(t_env *e);
 void				reset_param(t_env *e);
 void				ft_put_error(char *argv, char *str1);
 void				draw_julia(t_env *e);
+void				draw(t_env *e);
 #endif

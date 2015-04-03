@@ -6,16 +6,17 @@
 #    By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/01 14:18:08 by yfuks             #+#    #+#              #
-#    Updated: 2015/04/01 14:24:20 by yfuks            ###   ########.fr        #
+#    Updated: 2015/04/03 23:12:16 by yfuks            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = fractol
 
-SRC = sources/ft_fract_ol.c		\
+SRC = sources/draw.c			\
 		sources/ft_put_pixel.c	\
 		sources/main.c			\
-		libft/libft.a
+		libft/libft.a			\
+		sources/hook.c
 
 HEAD = ./includes
 
