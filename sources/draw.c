@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/03 23:11:56 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/04 06:47:13 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/04 06:51:27 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static void	fill_img(t_env *e)
 		(e->img, &e->bpp, &e->sizeline, &e->endian)))
 		ft_putendl_fd(strerror(errno), 2);
 	else
-		draw_tree(e, coord, -(M_PI / 2), 15);
-//	draw_fractal(e, burning_ship);
+		draw_fractal(e, burning_ship);
+//		draw_tree(e, coord, -(M_PI / 2), e->n);
 }
 
 void	draw(t_env *e)
