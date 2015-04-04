@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_pixel.c                                     :+:      :+:    :+:   */
+/*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 20:48:23 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/03 23:50:36 by yfuks            ###   ########.fr       */
+/*   Created: 2015/04/03 23:51:36 by yfuks             #+#    #+#             */
+/*   Updated: 2015/04/04 00:21:41 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fract_ol.h"
 
-void	put_pixel(t_env *e, int x, int y, int coloration)
+int		mandelbrot(t_env *e, int x, int y)
 {
-	int		r;
-	int		g;
-	int		b;
+	int		i;
+	double	Za;
+	double	Zb;
+	double	tmp;
 
-	r = (coloration & 0xFF0000) >> 16;
-	g = (coloration & 0xFF00) >> 8;
-	b = (coloration & 0xFF);
-	if (y >= 0 && x >= 0 && y < W_HEIGTH && x < W_WIDTH)
+	e->ca = 1.5 * (x - W_WIDTH / 2) / (0.5 * e->zoom * W_WIDTH) + e->x / 500 - 0.5;
+	e->cb = (y - W_HEIGTH / 2) / (0.5 * e->zoom * W_HEIGTH) - e->y / 500;
+	Za = 0;
+	Zb = 0;
+	i = 0;
+	while (Za * Za + Zb * Zb <= 4 && i < e->n)
 	{
-		e->data[(y * e->sizeline) + ((e->bpp / 8) * x) + 2] = r;
-		e->data[(y * e->sizeline) + ((e->bpp / 8) * x) + 1] = g;
-		e->data[(y * e->sizeline) + ((e->bpp / 8) * x)] = b;
+		tmp = Za;
+		Za = tmp * tmp - Zb * Zb + e->ca;
+		Zb = 2 * tmp * Zb + e->cb;
+		i++;
 	}
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/03 23:09:55 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/03 23:47:42 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/04 01:58:22 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,13 @@ int			mouse_mouv(int x, int y, t_env *e)
 
 int			mouse_hook(int button, int x, int y, t_env *e)
 {
-	(void)button;
 	(void)x;
 	(void)y;
-	(void)e;
+	if (button == SCROLL_UP)
+		e->zoom *= 1.1;
+	else if (button == SCROLL_DOWN && e->zoom > 0.1)
+		e->zoom /= 1.1;
+	if (button == SCROLL_UP || button == SCROLL_DOWN)
+		draw(e);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/24 17:57:00 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/03 23:36:19 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/04 02:29:59 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,11 @@ int				main(int ac, char **argv)
 		else
 		{
 			init_env(&e, argv[0]);
-			mlx_mouse_hook(e.win, mouse_hook, &e);
 			mlx_key_hook(e.win, key_hook, &e);
 			mlx_expose_hook(e.win, expose_hook, &e);
 			mlx_hook(e.win, 6, (1L << 6), mouse_mouv, &e);
+			mlx_hook(e.win, 4, (1L << 2), mouse_hook, &e);
+			mlx_do_key_autorepeatoff(e.mlx);
 			mlx_loop(e.mlx);
 		}
 	}
