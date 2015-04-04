@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/24 17:57:00 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/04 02:29:59 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/04 06:43:18 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static	void	init_env(t_env *e, char *argv)
 	e->r = 6;
 	e->g = 2;
 	e->b = 10;
+	e->size_tree = 1;
 	e->clock_prg = clock();
 }
 

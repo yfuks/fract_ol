@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 00:44:57 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/04 00:53:27 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/04 06:24:49 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ int		burning_ship(t_env *e, int x, int y)
 	double	Zb;
 	double	tmp;
 
-	e->ca = 1.5 * (x - W_WIDTH / 2) / (0.5 * e->zoom * W_WIDTH) + e->x / 500 - 0.5;
-	e->cb = (y - W_HEIGTH / 2) / (0.5 * e->zoom * W_HEIGTH) - e->y / 500;
+	e->ca = 1.5 * (x - W_WIDTH / 2) / (0.5 * e->zoom * W_WIDTH)
+		+ (e->x / W_WIDTH / 1.30) - 0.5;
+	e->cb = (y - W_HEIGTH / 2) / (0.5 * e->zoom * W_HEIGTH)
+		- (e->y / W_HEIGTH / 1.97);
 	Za = 0;
 	Zb = 0;
 	i = 0;

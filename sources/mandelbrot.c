@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/03 23:51:36 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/04 00:21:41 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/04 06:20:58 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ int		mandelbrot(t_env *e, int x, int y)
 	double	Zb;
 	double	tmp;
 
-	e->ca = 1.5 * (x - W_WIDTH / 2) / (0.5 * e->zoom * W_WIDTH) + e->x / 500 - 0.5;
-	e->cb = (y - W_HEIGTH / 2) / (0.5 * e->zoom * W_HEIGTH) - e->y / 500;
+	e->ca = 1.5 * (x - W_WIDTH / 2) / (0.5 * e->zoom * W_WIDTH)
+		+ (e->x / W_WIDTH / 1.37) - 0.5;
+	e->cb = (y - W_HEIGTH / 2) / (0.5 * e->zoom * W_HEIGTH)
+		- (e->y / W_HEIGTH / 1.92);
 	Za = 0;
 	Zb = 0;
 	i = 0;

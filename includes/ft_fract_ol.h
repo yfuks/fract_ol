@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/09 13:06:12 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/04 03:11:57 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/04 06:45:01 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct		s_env
 	double			ca;
 	double			cb;
 	double			zoom;
+	float			size_tree;
 	int				n;
 	int				r;
 	int				g;
