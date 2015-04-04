@@ -6,7 +6,7 @@
 #    By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/01 14:18:08 by yfuks             #+#    #+#              #
-#    Updated: 2015/04/03 23:39:41 by yfuks            ###   ########.fr        #
+#    Updated: 2015/04/04 03:12:11 by yfuks            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -17,7 +17,12 @@ SRC = sources/draw.c			\
 		sources/main.c			\
 		libft/libft.a			\
 		sources/hook.c			\
-		sources/draw_fractal.c
+		sources/draw_fractal.c	\
+		sources/julia.c			\
+		sources/mandelbrot.c	\
+		sources/sponge_manger.c	\
+		sources/burning_ship.c	\
+		sources/draw_tree.c		\
 
 HEAD = ./includes
 
