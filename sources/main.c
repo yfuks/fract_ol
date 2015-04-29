@@ -6,13 +6,13 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/24 17:57:00 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/04 06:43:18 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/29 01:53:55 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fract_ol.h"
 
-static	void	init_env(t_env *e, char *argv)
+void			init_env(t_env *e, char *argv)
 {
 	e->img = NULL;
 	e->x = 0;
@@ -29,7 +29,10 @@ static	void	init_env(t_env *e, char *argv)
 	e->g = 2;
 	e->b = 10;
 	e->size_tree = 1;
+	e->size_tree2 = 1;
 	e->clock_prg = clock();
+	e->tree = 0;
+	e->c = 1;
 }
 
 void			ft_put_error(char *argv, char *str1)
@@ -47,21 +50,24 @@ void			ft_put_error(char *argv, char *str1)
 int				main(int ac, char **argv)
 {
 	t_env	e;
-	(void)ac;
-//	if (ac != 2)
-//		ft_put_error("Usage", ft_strjoin(argv[0], " -JM"));
+
+	if (ac < 2)
+		ft_put_error("Usage", ft_strjoin(argv[0], " -JMBTS -R1 -R2 [--infos]"));
+	else
+	{
+		init_env(&e, argv[0]);
+		parse_arg(&e, ac, argv);
+	}
 	if ((e.mlx = mlx_init()))
 	{
 		if (!(e.win = mlx_new_window(e.mlx, W_WIDTH, W_HEIGTH, W_TITLE)))
 			ft_put_error(argv[1], strerror(errno));
 		else
 		{
-			init_env(&e, argv[0]);
 			mlx_key_hook(e.win, key_hook, &e);
 			mlx_expose_hook(e.win, expose_hook, &e);
 			mlx_hook(e.win, 6, (1L << 6), mouse_mouv, &e);
 			mlx_hook(e.win, 4, (1L << 2), mouse_hook, &e);
-			mlx_do_key_autorepeatoff(e.mlx);
 			mlx_loop(e.mlx);
 		}
 	}

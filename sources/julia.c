@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/03 23:50:06 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/03 23:50:30 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/29 01:53:26 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 int			julia(t_env *e, int x, int y)
 {
-	double	Za;
-	double	Zb;
+	double	za;
+	double	zb;
 	double	temp;
 	int		i;
 
-	Za = ((4 * (float)x / W_WIDTH - 2) / e->zoom) + ((e->x / W_WIDTH));
-	Zb = ((-4 * (float)y / W_HEIGTH + 2) / e->zoom) + ((e->y / W_HEIGTH));
+	za = ((4 * (float)x / W_WIDTH - 2) / e->zoom) + ((e->x / W_WIDTH));
+	zb = ((-4 * (float)y / W_HEIGTH + 2) / e->zoom) + ((e->y / W_HEIGTH));
 	i = 0;
-	while (Za * Za + Zb * Zb <= 4 && i < e->n)
+	while (za * za + zb * zb <= 4 && i < e->n)
 	{
-		temp = Za;
-		Za = Za * Za - Zb * Zb + e->ca;
-		Zb = 2 * temp * Zb + e->cb;
+		temp = za;
+		za = za * za - zb * zb + e->ca;
+		zb = 2 * temp * zb + e->cb;
 		i++;
 	}
 	return (i);

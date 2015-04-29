@@ -6,7 +6,7 @@
 #    By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/01 14:18:08 by yfuks             #+#    #+#              #
-#    Updated: 2015/04/04 03:12:11 by yfuks            ###   ########.fr        #
+#    Updated: 2015/04/29 01:39:44 by yfuks            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -23,6 +23,11 @@ SRC = sources/draw.c			\
 		sources/sponge_manger.c	\
 		sources/burning_ship.c	\
 		sources/draw_tree.c		\
+		sources/random.c		\
+		sources/random2.c		\
+		sources/parse_arg.c		\
+		sources/put_infos.c		\
+		sources/hook_f.c
 
 HEAD = ./includes
 

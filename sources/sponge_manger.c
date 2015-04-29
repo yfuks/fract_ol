@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 00:33:27 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/04 06:12:16 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/04/29 01:22:03 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int		sponge(t_env *e, int x, int y)
 
 	i = 0;
 	e->zoom = (e->zoom >= 5) ? 1.6 : e->zoom;
+	e->zoom = (e->zoom <= 0.6) ? 1.6 : e->zoom;
 	x = (x) / e->zoom;
 	y = (y) / e->zoom;
 	x = ft_fabs(x);
