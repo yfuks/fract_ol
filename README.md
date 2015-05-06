@@ -6,13 +6,13 @@ Fract_ol 42 is a tiny software that display fractals using Mlx library.
 ##Infos :
 ###FRACTALS
 
-J     : Julia
-M     : Mandelbrot
-B     : Burning Ship
-T     : Tree
-S     : Menger Sponge
-R1    : Fractal random 1
-R2    : Fractal random 2
+-J     : Julia
+-M     : Mandelbrot
+-B     : Burning Ship
+-T     : Tree
+-S     : Menger Sponge
+-R1    : Fractal random 1
+-R2    : Fractal random 2
 
 Usage : ./fractol -JMBTS -R1 -R2
 
