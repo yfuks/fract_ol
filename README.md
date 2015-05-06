@@ -1,5 +1,6 @@
 # fract_ol
 A 42 school project
+Fract_ol 42 is a tiny software that display fractals using Mlx library.
 
 <img src="http://i.imgur.com/QInhwKc.png" width="50%" align="left"/>
 <img src="http://i.imgur.com/FS68hV9.png" width="50%" align="right"/>
