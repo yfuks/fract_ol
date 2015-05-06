@@ -31,7 +31,7 @@ Usage : `$>./fractol -JMBTS -R1 -R2 [--infos]`
 - Scroll up/down : Zoom in/Zoom out
 - Move           : change the coefficents (in Julia, tree, random 1 and random 2)
 
-
+##Screenshots :
 <img src="http://i.imgur.com/QInhwKc.png" width="50%" align="left"/>
 <img src="http://i.imgur.com/FS68hV9.png" width="50%" align="right"/>
 
