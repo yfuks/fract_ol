@@ -18,18 +18,18 @@ Usage : ./fractol -JMBTS -R1 -R2
 
 ###KEYS HOOKS
 
-ESC          : quit
-Arrows keys  : move in the fractal
-Minus / Plus : increase or decrease the iterations number
-Numeric pad  : change color value
-C            : lock/unlock mouse move hook
-R            : reset modifications
-F1 to F7     : set the fractal
+- ESC          : quit
+- Arrows keys  : move in the fractal
+- Minus / Plus : increase or decrease the iterations number
+- Numeric pad  : change color value
+- C            : lock/unlock mouse move hook
+- R            : reset modifications
+- F1 to F7     : set the fractal
 
 ###MOUSE HOOKS
 
-Scroll up/down : change the zoom value
-Move           : change the coefficents (in Julia, tree, random 1 and random 2)
+- Scroll up/down : change the zoom value
+- Move           : change the coefficents (in Julia, tree, random 1 and random 2)
 
 
 <img src="http://i.imgur.com/QInhwKc.png" width="50%" align="left"/>
