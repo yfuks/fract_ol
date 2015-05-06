@@ -4,7 +4,7 @@ A 42 school project
 Fract_ol 42 is a tiny software that display fractals using Mlx library.
 
 ##Infos :
----FRACTALS---
+###FRACTALS
 
 J     : Julia
 M     : Mandelbrot
@@ -16,7 +16,7 @@ R2    : Fractal random 2
 
 Usage : ./fractol -JMBTS -R1 -R2
 
----KEYS HOOKS---
+###KEYS HOOKS
 
 ESC          : quit
 Arrows keys  : move in the fractal
@@ -26,7 +26,7 @@ C            : lock/unlock mouse move hook
 R            : reset modifications
 F1 to F7     : set the fractal
 
----MOUSE HOOKS---
+###MOUSE HOOKS
 
 Scroll up/down : change the zoom value
 Move           : change the coefficents (in Julia, tree, random 1 and random 2)
