@@ -1,8 +1,8 @@
 # fract_ol
 A 42 school project
 
-<img src="http://i.imgur.com/QInhwKc.png" align="left"/>
-<img src="http://i.imgur.com/FS68hV9.png" align="right"/>
+<img src="http://i.imgur.com/QInhwKc.png" width="50%" align="left"/>
+<img src="http://i.imgur.com/FS68hV9.png" width="50%" align="right"/>
 <img src="http://i.imgur.com/4Lk3Gbp.png" align="left"/>
 <img src="http://i.imgur.com/p9S76I9.png" align="right"/>
 <img src="http://i.imgur.com/DbEpsZv.png" align="left"/>
