@@ -28,7 +28,7 @@ Usage : `$>./fractol -JMBTS -R1 -R2 [--infos]`
 
 ###MOUSE HOOKS
 
-- Scroll up/down : change the zoom value
+- Scroll up/down : Zoom in/Zoom out
 - Move           : change the coefficents (in Julia, tree, random 1 and random 2)
 
 
