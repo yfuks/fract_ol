@@ -6,7 +6,7 @@
 #    By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/01 14:18:08 by yfuks             #+#    #+#              #
-#    Updated: 2015/04/29 01:39:44 by yfuks            ###   ########.fr        #
+#    Updated: 2015/06/12 20:03:58 by yfuks            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -27,9 +27,10 @@ SRC = sources/draw.c			\
 		sources/random2.c		\
 		sources/parse_arg.c		\
 		sources/put_infos.c		\
-		sources/hook_f.c
+		sources/hook_f.c		\
+		minilibx_macos/libmlx.a
 
-HEAD = ./includes
+HEAD = ./includes -I ./minilibx_macos
 
 OBJ = $(SRC:.c=.o)
 
@@ -37,7 +38,7 @@ FLAGS = -Wall -Wextra -Werror
 
 CC = clang
 
-LIB = /usr/x11/lib -lmlx -framework OpenGL -framework AppKit
+LIB = ./minilibx_macos -framework OpenGL -framework AppKit
 
 all : $(NAME)
 
