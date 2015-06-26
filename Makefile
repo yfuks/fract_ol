@@ -6,7 +6,7 @@
 #    By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/01 14:18:08 by yfuks             #+#    #+#              #
-#    Updated: 2015/06/12 20:03:58 by yfuks            ###   ########.fr        #
+#    Updated: 2015/06/26 13:07:03 by yfuks            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -44,6 +44,7 @@ all : $(NAME)
 
 $(NAME):
 	make -C ./libft
+	make -C ./minilibx_macos
 	$(CC) $(FLAGS) $(SRC) -I $(HEAD) -L $(LIB) -o $(NAME)
 
 clean:
