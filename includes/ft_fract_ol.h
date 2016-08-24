@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/09 13:06:12 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/29 02:21:56 by yfuks            ###   ########.fr       */
+/*   Updated: 2016/08/24 20:31:50 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@
 # define SCROLL_UP		4
 # define SCROLL_DOWN	5
 
-# define FPS		30
+# define FPS		200
 
 typedef struct		s_env
 {

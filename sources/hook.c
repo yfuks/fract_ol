@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/03 23:09:55 by yfuks             #+#    #+#             */
-/*   Updated: 2015/04/29 01:58:46 by yfuks            ###   ########.fr       */
+/*   Updated: 2016/08/24 20:32:51 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,15 +74,20 @@ int			key_hook(int keycode, t_env *e)
 
 int			mouse_mouv(int x, int y, t_env *e)
 {
-	if (((FPS) * (clock() - e->clock_prg)) / CLOCKS_PER_SEC > 1 && e->c)
+	if (((FPS) * (clock() - e->clock_prg)) / CLOCKS_PER_SEC > 1 && e->c && !e->tree)
 	{
 		e->clock_prg = clock();
-		e->size_tree = (float)y / W_HEIGTH;
-		e->size_tree2 = (float)x / W_WIDTH;
 		x -= W_WIDTH / 2;
 		y -= W_HEIGTH / 2;
 		e->ca = ((float)x / W_WIDTH) * 2;
 		e->cb = ((float)y / W_HEIGTH) * 2;
+		draw(e, e->f);
+	}
+	else if (((950) * (clock() - e->clock_prg)) / CLOCKS_PER_SEC > 1 && e->c && e->tree)
+	{
+		e->clock_prg = clock();
+		e->size_tree = (float)y / W_HEIGTH;
+		e->size_tree2 = (float)x / W_WIDTH;
 		draw(e, e->f);
 	}
 	return (0);
